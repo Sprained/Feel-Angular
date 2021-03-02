@@ -1,0 +1,63 @@
+.container {
+    height: 100vh;
+    max-width: 1120px;
+    margin: 0 auto;
+    overflow: hidden;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.form {
+    div {
+        height: 90%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        button {
+            width: 300px;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 14px;
+            border: none;
+            border-radius: 3px;
+            background-color: #fff;
+            cursor: pointer;
+        }
+
+        button:hover {
+            opacity: 0.8;
+        }
+
+        h1 {
+            font-size: 60px;
+            color: #fff;
+            text-align: center;
+            margin-bottom: 12px;
+        }
+    }
+
+    .end {
+        height: 10%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    
+        a {
+            color: #fff;
+        }
+    
+        svg {
+            fill: #fff;
+            margin-right: 10px;
+        }
+    }
+}
+
+#join {
+    color: #fff;
+    background-color: var(--standard);
+    margin-bottom: 20px;
+    margin-top: 20px;
+}

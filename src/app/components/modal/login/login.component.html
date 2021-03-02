@@ -1,0 +1,43 @@
+<div class="modal-header">
+    <h4 class="modal-title">Login</h4>
+    <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+
+<form [formGroup]="loginForm" (ngSubmit)="login()">
+    <div class="modal-body">
+        <!--Email -->
+        <input 
+            type="text" 
+            placeholder='Email' 
+            class='form-control mb-3' 
+            id='email'
+            name='email'
+            [(ngModel)]='session.email' 
+            formControlName='email'
+            [ngClass]="{'is-invalid': loginForm.get('email').errors && loginForm.get('email').touched}">
+        <div *ngIf="loginForm.get('email').hasError('required') && loginForm.get('email').touched"
+            class="ivalid-feedback">
+            O Email é obrigatório!
+        </div>
+        <div *ngIf="loginForm.get('email').hasError('email') && loginForm.get('email').touched"
+            class="invalid-feedback">
+            Email invalido!
+        </div>
+
+        <!--Senha -->
+        <input type="password" placeholder='Password' class='form-control mb-3' id='password' name='password'
+            [(ngModel)]='session.password' formControlName='password'
+            [ngClass]="{'is-invalid': loginForm.get('password').errors && loginForm.get('password').touched}">
+        <div *ngIf="loginForm.get('password').hasError('required') && loginForm.get('password').touched"
+            class="invalid-feedback">
+            A Senha é obrigatória!
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="submit" class="btn btn-outline-dark" [disabled]="!loginForm.valid">Login</button>
+        <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Close</button>
+    </div>
+</form>

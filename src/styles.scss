@@ -1,1 +1,23 @@
-/* You can add global styles to this file, and also import other style files */
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+
+/* Import Font Quicksand */
+@import url('https://fonts.googleapis.com/css?family=Quicksand:wght@300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+    font-family: 'Quicksand', sans-serif;
+}
+
+:root {
+    --standard: #EC6C6E;
+    --background: #1B1C2E;
+}
+
+
+body {
+    background-color: var(--background) !important;
+}
